@@ -1,28 +1,28 @@
-<h1>Blog</h1>
+<h1 class="text-2xl font-black">Blog</h1>
 
-<.link href={~p"/posts/new"}>Create Post</.link>
+<.link href={~p"/posts/new"} class="float-right bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Create Post</.link>
+
+<br>
 
 <%= for post <- @posts do %>
-  <.list>
-      <:item title="Title">
-         <.link href={~p"/posts/#{post.id}"}>
-          <%= post.title %>
-        </.link>
-      </:item>
+  <div class="bg-slate-100 p-4 mb-4 rounded pt-0 mt-4">
+    <.list class="divide-y">
+      <:item title="Title"><%= post.title %></:item>
       <:item title="Content"><%= post.body %></:item>
       <:item title="Created At"><%= post.inserted_at %></:item>
       <:item title="Actions">
-        <.link href={~p"/posts/#{post.id}"}>
+        <.link href={~p"/posts/#{post.id}"} class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
           view
         </.link>
-        |
-        <.link href={~p"/posts/#{post.id}/edit"}>
+
+        <.link href={~p"/posts/#{post.id}/edit"} class="ml-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
           edit
         </.link>
-        |
-        <.link href={~p"/posts/#{post.id}"} method="delete">
+
+        <.link href={~p"/posts/#{post.id}"} method="delete" class="ml-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
           delete
         </.link>
       </:item>
-  </.list>
+    </.list>
+  </div>
 <% end %>
