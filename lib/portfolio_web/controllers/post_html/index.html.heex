@@ -1,0 +1,28 @@
+<h1>Blog</h1>
+
+<.link href={~p"/posts/new"}>Create Post</.link>
+
+<%= for post <- @posts do %>
+  <.list>
+      <:item title="Title">
+         <.link href={~p"/posts/#{post.id}"}>
+          <%= post.title %>
+        </.link>
+      </:item>
+      <:item title="Content"><%= post.body %></:item>
+      <:item title="Created At"><%= post.inserted_at %></:item>
+      <:item title="Actions">
+        <.link href={~p"/posts/#{post.id}"}>
+          view
+        </.link>
+        |
+        <.link href={~p"/posts/#{post.id}/edit"}>
+          edit
+        </.link>
+        |
+        <.link href={~p"/posts/#{post.id}"} method="delete">
+          delete
+        </.link>
+      </:item>
+  </.list>
+<% end %>

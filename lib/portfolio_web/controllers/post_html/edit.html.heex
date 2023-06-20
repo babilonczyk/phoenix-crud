@@ -1,0 +1,17 @@
+
+<h1>Update Post</h1>
+
+<.simple_form for={@conn} action={~p"/posts"} method="put">
+  <.input name="title" label="Title" placeholder="Title" value={@post.title} />
+  <.input type="textarea" name="body" label="Body" placeholder="Content..." value={@post.body}/>
+  <.input type="hidden" name="id" value={@post.id} />
+  <.error :for={error <- @changeset.errors} :if={@changeset.action == :insert}>
+    <% {key, {message, _}} = error %>
+    <%= "Error: #{key} #{message}" %>
+  </.error>
+  <:actions>
+    <.button>Update Post</.button>
+  </:actions>
+</.simple_form>
+
+<span>or <.link href={~p"/posts"}>go back</.link></span>

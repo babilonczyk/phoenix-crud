@@ -1,0 +1,8 @@
+<span><.link href={~p"/posts"}>go back</.link></span>
+
+<h1>Title: <%= @post.title %></h1>
+
+<.list>
+  <:item title="Created At"><%= @post.inserted_at %></:item>
+  <:item title="Content"><%= @post.body %></:item>
+</.list>

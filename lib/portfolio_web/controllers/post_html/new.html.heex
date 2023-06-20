@@ -1,1 +1,16 @@
-elo
+
+<h1>Create Post</h1>
+
+<.simple_form for={@conn} action={~p"/posts"} method="post">
+  <.input name="title" label="Title" placeholder="Title" value="" />
+  <.input type="textarea" name="body" label="Body" placeholder="Content..." value=""/>
+  <.error :for={error <- @changeset.errors} :if={@changeset.action == :insert}>
+    <% {key, {message, _}} = error %>
+    <%= "Error: #{key} #{message}" %>
+  </.error>
+  <:actions>
+    <.button>Create Post</.button>
+  </:actions>
+</.simple_form>
+
+<span>or <.link href={~p"/posts"}>go back</.link></span>
