@@ -1,19 +1,12 @@
-# Portfolio
+# Phoenix Blog
 
-To start your Phoenix server:
+This is a small phoenix project to test the grounds. It implements crud actions for a blog post.
 
+To start:
+  * set up correct local postgres credentials in `config/dev.exs`
   * Run `mix setup` to install and setup dependencies
+  * create db `mix ecto.create`
+  * run migrations  `mix ecto.migrate`
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
-# myportfolio-app
