@@ -1,4 +1,4 @@
-# Phoenix Blog
+# Phoenix Crud App
 
 This is a small phoenix project to test the grounds. It implements crud actions for a blog post.
 
